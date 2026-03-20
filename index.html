@@ -57,6 +57,768 @@
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--teal); }
+
+  /* ── SECTIONS ── */
+  section { padding: 6rem 3rem; max-width: 1100px; margin: 0 auto; }
+  section:first-of-type { padding-top: 8rem; }
+
+  .section-label {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
+    color: var(--teal); text-transform: uppercase; margin-bottom: 1rem;
+  }
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    line-height: 1.1; letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    letter-spacing: -0.02em; color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+  h3 {
+    font-size: 1.1rem; font-weight: 600; color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+  p { color: var(--ink-soft); font-size: 1rem; line-height: 1.75; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding-top: 80px; max-width: 100%; padding-left: 0; padding-right: 0;
+    position: relative; overflow: hidden;
+  }
+  .hero-inner {
+    max-width: 1100px; margin: 0 auto; padding: 0 3rem;
+    position: relative; z-index: 2;
+  }
+  .hero-bg {
+    position: absolute; top: 0; right: 0;
+    width: 55%; height: 100%;
+    background: linear-gradient(135deg, #e6f5f2 0%, #d0ede8 100%);
+    clip-path: polygon(12% 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: 1;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--teal-light); border: 1px solid var(--teal-mid);
+    border-radius: 100px; padding: 6px 16px;
+    font-size: 0.8rem; font-weight: 600; color: var(--teal);
+    letter-spacing: 0.04em; margin-bottom: 2rem;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-eyebrow::before {
+    content: ''; width: 7px; height: 7px; border-radius: 50%;
+    background: var(--teal); display: inline-block;
+  }
+  h1 { animation: fadeUp 0.6s 0.1s ease both; }
+  .hero-sub {
+    font-size: 1.2rem; color: var(--ink-soft); max-width: 540px;
+    margin: 1.5rem 0 3rem; line-height: 1.65;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+  .hero-stats {
+    display: flex; gap: 3rem; margin-top: 2rem;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+  .hero-stat-val {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.6rem; color: var(--teal); line-height: 1;
+  }
+  .hero-stat-label { font-size: 0.85rem; color: var(--ink-faint); margin-top: 4px; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── COME FUNZIONA ── */
+  .flow-steps {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+    margin-top: 3rem; position: relative;
+  }
+  .flow-steps::before {
+    content: ''; position: absolute;
+    top: 36px; left: calc(12.5% + 16px); right: calc(12.5% + 16px);
+    height: 1px; background: var(--teal-mid); z-index: 0;
+  }
+  .flow-step { text-align: center; padding: 0 1rem; position: relative; z-index: 1; }
+  .flow-num {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: var(--white); border: 2px solid var(--teal);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.2rem;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem; color: var(--teal);
+    box-shadow: 0 0 0 6px var(--cream);
+  }
+  .flow-step h3 { font-size: 0.95rem; margin-bottom: 0.5rem; }
+  .flow-step p { font-size: 0.85rem; color: var(--ink-faint); }
+
+  /* ── CODICE ── */
+  #codice { background: var(--white); max-width: 100%; padding: 6rem 0; }
+  .codice-inner { max-width: 1100px; margin: 0 auto; padding: 0 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .code-mockup {
+    background: var(--ink); border-radius: 20px; padding: 2rem;
+    box-shadow: var(--shadow-lg); position: relative; overflow: hidden;
+  }
+  .code-mockup::before {
+    content: ''; position: absolute; top: -60px; right: -60px;
+    width: 200px; height: 200px; border-radius: 50%;
+    background: rgba(13,122,107,0.15);
+  }
+  .code-mockup-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-bottom: 1rem; }
+  .code-display {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.2rem; color: #7fffd4; letter-spacing: 0.08em;
+    margin-bottom: 1.5rem;
+  }
+  .code-meta { display: flex; flex-direction: column; gap: 10px; }
+  .code-meta-row { display: flex; align-items: center; gap: 10px; }
+  .code-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .code-meta-text { font-size: 0.82rem; color: rgba(255,255,255,0.55); }
+  .badge-ok { background: rgba(127,255,212,0.15); border: 1px solid rgba(127,255,212,0.3); color: #7fffd4; font-size: 0.75rem; padding: 2px 10px; border-radius: 100px; font-weight: 600; }
+
+  .feature-list { list-style: none; display: flex; flex-direction: column; gap: 1.2rem; margin-top: 2rem; }
+  .feature-list li { display: flex; align-items: flex-start; gap: 14px; }
+  .feature-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--teal-light); color: var(--teal);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; flex-shrink: 0; margin-top: 2px;
+  }
+  .feature-list h3 { font-size: 0.95rem; margin-bottom: 2px; }
+  .feature-list p { font-size: 0.85rem; }
+
+  /* ── SCONTO ── */
+  .sconto-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 20px; padding: 3rem; box-shadow: var(--shadow);
+    display: grid; grid-template-columns: 1fr auto 1fr auto 1fr;
+    align-items: center; gap: 1.5rem; margin-top: 3rem;
+  }
+  .price-box { text-align: center; }
+  .price-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.8rem; }
+  .price-val { font-family: 'DM Serif Display', serif; font-size: 2.6rem; line-height: 1; }
+  .price-val.strike { color: var(--ink-faint); position: relative; }
+  .price-val.strike::after { content: ''; position: absolute; top: 50%; left: 0; right: 0; height: 2px; background: var(--ink-faint); }
+  .price-val.green { color: var(--teal); }
+  .price-val.gold { color: var(--gold); }
+  .price-sub { font-size: 0.82rem; color: var(--ink-faint); margin-top: 6px; }
+  .arrow-sep { font-size: 1.5rem; color: var(--border); }
+
+  /* ── TIER ── */
+  #tier { background: var(--ink); max-width: 100%; padding: 6rem 0; }
+  .tier-inner { max-width: 1100px; margin: 0 auto; padding: 0 3rem; }
+  #tier .section-label { color: var(--teal-mid); }
+  #tier h2 { color: var(--white); }
+  #tier p { color: rgba(255,255,255,0.55); }
+
+  .tier-cards {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; margin-top: 3rem;
+  }
+  .tier-card {
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px; padding: 2rem;
+    transition: transform 0.2s, border-color 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .tier-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.2); }
+  .tier-card.featured { border-color: var(--teal); background: rgba(13,122,107,0.15); }
+  .tier-tag {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--teal-mid);
+    margin-bottom: 1rem; display: block;
+  }
+  .tier-card.featured .tier-tag { color: #7fffd4; }
+  .tier-pct {
+    font-family: 'DM Serif Display', serif;
+    font-size: 3.5rem; color: var(--white); line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .tier-range { font-size: 0.9rem; color: rgba(255,255,255,0.5); margin-bottom: 1.5rem; }
+  .tier-example {
+    background: rgba(255,255,255,0.06); border-radius: 10px;
+    padding: 1rem; margin-top: auto;
+  }
+  .tier-ex-label { font-size: 0.72rem; color: rgba(255,255,255,0.4); margin-bottom: 4px; }
+  .tier-ex-val { font-size: 1.1rem; font-weight: 600; color: var(--white); }
+  .tier-note {
+    font-size: 0.82rem; color: rgba(255,255,255,0.35);
+    margin-top: 2rem; padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+  }
+
+  /* ── SIMULATORE ── */
+  .sim-wrap {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 20px; padding: 2.5rem; box-shadow: var(--shadow);
+    margin-top: 3rem;
+  }
+  .sim-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; }
+  .sim-header h3 { font-size: 1rem; }
+  .sim-control { display: flex; align-items: center; gap: 12px; }
+  .sim-control label { font-size: 0.85rem; color: var(--ink-faint); }
+  input[type=range] {
+    -webkit-appearance: none; height: 6px;
+    background: var(--border); border-radius: 3px; width: 140px; cursor: pointer;
+    touch-action: pan-y;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none; width: 18px; height: 18px;
+    border-radius: 50%; background: var(--teal); cursor: pointer;
+    box-shadow: 0 0 0 3px rgba(13,122,107,0.2);
+  }
+  .sim-val { font-size: 1rem; font-weight: 600; color: var(--teal); min-width: 30px; }
+  .sim-rows { display: flex; flex-direction: column; gap: 6px; }
+  .sim-row {
+    display: grid; grid-template-columns: 32px 1fr 80px 80px 80px;
+    align-items: center; gap: 1rem; padding: 10px 14px;
+    border-radius: 10px; font-size: 0.88rem;
+    background: var(--cream);
+  }
+  .sim-row.t2 { background: #e6f5f2; }
+  .sim-row.t3 { background: #fdf3e3; }
+  .sim-row-num { font-weight: 600; color: var(--ink-faint); text-align: center; }
+  .sim-tier-badge {
+    display: inline-block; padding: 2px 8px; border-radius: 100px;
+    font-size: 0.75rem; font-weight: 600;
+  }
+  .t1-badge { background: var(--teal-light); color: var(--teal); }
+  .t2-badge { background: #dbeafe; color: #1d4ed8; }
+  .t3-badge { background: var(--gold-light); color: var(--gold); }
+  .sim-footer {
+    margin-top: 1.5rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .sim-total-label { font-size: 0.85rem; color: var(--ink-faint); }
+  .sim-total-val { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--teal); }
+
+  /* ── CALCULATOR ── */
+  .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; align-items: start; }
+  .calc-inputs { display: flex; flex-direction: column; gap: 1.5rem; }
+  .calc-field label { font-size: 0.8rem; font-weight: 600; color: var(--ink-soft); letter-spacing: 0.04em; display: block; margin-bottom: 8px; }
+  .calc-field input, .calc-field select {
+    width: 100%; padding: 14px 16px; border-radius: 10px; font-size: 16px;
+    border: 1.5px solid var(--border); font-size: 1rem;
+    font-family: 'DM Sans', sans-serif; color: var(--ink);
+    background: var(--white); transition: border-color 0.2s;
+    outline: none;
+  }
+  .calc-field input:focus, .calc-field select:focus { border-color: var(--teal); }
+  .calc-result {
+    background: var(--ink); border-radius: 20px; padding: 2.5rem;
+    box-shadow: var(--shadow-lg);
+  }
+  .calc-result-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-bottom: 0.5rem; }
+  .calc-result-val { font-family: 'DM Serif Display', serif; font-size: 3rem; color: #7fffd4; line-height: 1.1; margin-bottom: 0.3rem; }
+  .calc-breakdown { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 10px; }
+  .calc-br-row { display: flex; justify-content: space-between; font-size: 0.85rem; }
+  .calc-br-row span:first-child { color: rgba(255,255,255,0.45); }
+  .calc-br-row span:last-child { color: rgba(255,255,255,0.85); font-weight: 500; }
+  .calc-br-divider { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 4px 0; }
+
+  /* ── FAQ / NOTES ── */
+  .notes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+  .note-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 16px; padding: 1.8rem;
+    border-left: 4px solid var(--teal);
+  }
+  .note-card h3 { font-size: 0.95rem; margin-bottom: 0.5rem; }
+  .note-card p { font-size: 0.85rem; }
+
+  /* ── CTA ── */
+  #cta {
+    background: var(--teal); max-width: 100%; padding: 6rem 0; text-align: center;
+  }
+  .cta-inner { max-width: 600px; margin: 0 auto; padding: 0 3rem; }
+  #cta h2 { color: var(--white); font-size: 2.4rem; }
+  #cta p { color: rgba(255,255,255,0.75); margin-top: 1rem; font-size: 1.05rem; }
+  .cta-badge {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3); border-radius: 100px;
+    padding: 8px 24px; font-size: 0.85rem; font-weight: 600;
+    color: var(--white); margin-top: 2.5rem; letter-spacing: 0.04em;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink); text-align: center; padding: 2rem;
+    font-size: 0.8rem; color: rgba(255,255,255,0.3);
+  }
+
+  /* ── DIVIDER ── */
+  .section-divider { border: none; border-top: 1px solid var(--border); margin: 0 3rem; }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 1.2rem; }
+    .nav-links { display: none; }
+
+    section { padding: 3rem 1.2rem; }
+    section:first-of-type { padding-top: 6rem; }
+
+    #hero { min-height: auto; padding-bottom: 3rem; }
+    .hero-bg { width: 100%; clip-path: none; opacity: 0.4; }
+    .hero-inner { padding: 0 1.2rem; }
+    h1 { font-size: 2.2rem; }
+    .hero-sub { font-size: 1rem; }
+    .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+    .hero-stat-val { font-size: 2rem; }
+
+    .flow-steps { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .flow-steps::before { display: none; }
+    .flow-num { width: 44px; height: 44px; font-size: 1.1rem; }
+
+    #codice { padding: 3rem 0; }
+    .codice-inner { grid-template-columns: 1fr; gap: 2rem; padding: 0 1.2rem; }
+    .code-display { font-size: 1.6rem; }
+
+    .sconto-card {
+      grid-template-columns: 1fr;
+      text-align: center; gap: 1rem; padding: 2rem 1.2rem;
+    }
+    .arrow-sep { transform: rotate(90deg); font-size: 1.2rem; }
+    .price-val { font-size: 2rem; }
+
+    #tier { padding: 3rem 0; }
+    .tier-inner { padding: 0 1.2rem; }
+    .tier-cards { grid-template-columns: 1fr; gap: 1rem; }
+    .tier-pct { font-size: 2.8rem; }
+
+    .sim-wrap { padding: 1.5rem 1rem; }
+    .sim-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .sim-control { width: 100%; }
+    input[type=range] { width: 100%; flex: 1; }
+    .sim-row { grid-template-columns: 28px 1fr 90px 70px; font-size: 0.82rem; padding: 8px 10px; }
+    .sim-row > *:nth-child(4) { display: none; }
+
+    .calc-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .calc-result-val { font-size: 2.4rem; }
+
+    .notes-grid { grid-template-columns: 1fr; gap: 1rem; }
+
+    #cta { padding: 4rem 0; }
+    .cta-inner { padding: 0 1.2rem; }
+    #cta h2 { font-size: 1.8rem; }
+
+    h2 { font-size: 1.8rem; }
+  }
+
+  @media (max-width: 400px) {
+    h1 { font-size: 1.9rem; }
+    .flow-steps { grid-template-columns: 1fr; }
+    .hero-stats { flex-direction: column; gap: 1rem; }
+    .sim-row { grid-template-columns: 24px 1fr 80px; }
+    .sim-row > *:nth-child(4), .sim-row > *:nth-child(5) { display: none; }
+    .sim-row > *:nth-child(3) { display: block; }
+  }
+
+  @media (max-width: 480px) {
+    nav { padding: 0 1rem; }
+    .hero-inner { padding: 0 1.5rem; }
+    h1 { font-size: 2rem; }
+    .hero-stats { flex-direction: column; gap: 1.5rem; }
+    .hero-stat-val { font-size: 2rem; }
+    .flow-steps { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .flow-steps::before { display: none; }
+    section { padding: 3.5rem 1.5rem; }
+    .sconto-card { padding: 1.5rem; gap: 1rem; }
+    .tier-cards { grid-template-columns: 1fr; gap: 1rem; }
+    .tier-pct { font-size: 2.8rem; }
+    .notes-grid { grid-template-columns: 1fr; }
+    .calc-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .codice-inner { padding: 0 1.5rem; gap: 2.5rem; }
+    .sim-wrap { padding: 1.5rem; }
+    .sim-row { grid-template-columns: 24px 1fr 70px 70px; font-size: 0.8rem; gap: 0.5rem; padding: 8px 10px; }
+    .code-display { font-size: 1.7rem; }
+    .calc-result { padding: 1.5rem; }
+    .calc-result-val { font-size: 2.2rem; }
+    .cta-inner { padding: 0 1.5rem; }
+    #cta h2 { font-size: 1.8rem; }
+    .tier-inner { padding: 0 1.5rem; }
+    h2 { font-size: 1.8rem; }
+    .hero-bg { width: 100%; clip-path: none; opacity: 0.3; }
+  }
 </style>
 </head>
-<body><p>Test</p></body></html>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Scan<span>3D</span>Feet</div>
+  <div class="nav-links">
+    <a href="#come-funziona">Come funziona</a>
+    <a href="#codice">Il codice</a>
+    <a href="#sconto">Sconto paziente</a>
+    <a href="#tier">Commissioni</a>
+    <a href="#simulatore">Simulatore</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Programma Partner 2026</div>
+    <h1>Guadagna mentre<br>aiuti i tuoi pazienti</h1>
+    <p class="hero-sub">Scan3DFeet ti permette di offrire plantari su misura 3D ai tuoi pazienti — con uno sconto esclusivo per loro e una commissione per te, automaticamente.</p>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-val">−15%</div>
+        <div class="hero-stat-label">sconto per il paziente</div>
+      </div>
+      <div>
+        <div class="hero-stat-val">6–12%</div>
+        <div class="hero-stat-label">commissione per te</div>
+      </div>
+      <div>
+        <div class="hero-stat-val">90s</div>
+        <div class="hero-stat-label">per generare un codice</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COME FUNZIONA -->
+<section id="come-funziona">
+  <div class="section-label">Il flusso completo</div>
+  <h2>Semplice in 4 passi</h2>
+  <p>Dalla prima visita all'accredito della tua commissione — tutto automatico.</p>
+  <div class="flow-steps">
+    <div class="flow-step">
+      <div class="flow-num">1</div>
+      <h3>Genera il codice</h3>
+      <p>Dalla tua dashboard crei un codice univoco in pochi secondi</p>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">2</div>
+      <h3>Lo dai al paziente</h3>
+      <p>Il paziente lo inserisce nell'app Scan3DFeet e ottiene il 15% di sconto</p>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">3</div>
+      <h3>Scansione e ordine</h3>
+      <p>Il paziente scansiona il piede e ordina il plantare su misura</p>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">4</div>
+      <h3>Commissione accreditata</h3>
+      <p>Non appena l'ordine è evaso, la tua fee viene calcolata e accreditata</p>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- CODICE -->
+<div id="codice" style="background: var(--white); padding: 6rem 0;">
+  <div class="codice-inner">
+    <div>
+      <div class="section-label">Il tuo strumento</div>
+      <h2>Il codice univoco paziente</h2>
+      <p>Ogni codice è legato al tuo profilo. Chiunque lo utilizzi sarà associato a te — automaticamente e senza frizioni.</p>
+      <ul class="feature-list">
+        <li>
+          <div class="feature-icon">🔗</div>
+          <div>
+            <h3>Tracciabile</h3>
+            <p>Ogni codice è univoco e non riutilizzabile. Il sistema sa sempre da chi proviene il paziente.</p>
+          </div>
+        </li>
+        <li>
+          <div class="feature-icon">⚡</div>
+          <div>
+            <h3>Istantaneo</h3>
+            <p>Generare un nuovo codice richiede un click. Puoi crearne più di uno in anticipo.</p>
+          </div>
+        </li>
+        <li>
+          <div class="feature-icon">📋</div>
+          <div>
+            <h3>Copiabile</h3>
+            <p>Copia e incolla nel messaggio, nell'email o mostralo direttamente in studio al paziente.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <div class="code-mockup">
+        <div class="code-mockup-label">Il tuo codice paziente</div>
+        <div class="code-display" id="hero-code">DR4819-X7K2</div>
+        <div class="code-meta">
+          <div class="code-meta-row">
+            <div class="code-dot" style="background:#7fffd4"></div>
+            <span class="code-meta-text">Collegato a: Dott. Mezzela</span>
+            <span class="badge-ok">attivo</span>
+          </div>
+          <div class="code-meta-row">
+            <div class="code-dot" style="background:rgba(255,255,255,0.3)"></div>
+            <span class="code-meta-text">Generato oggi — valido 90 giorni</span>
+          </div>
+          <div class="code-meta-row">
+            <div class="code-dot" style="background:rgba(255,255,255,0.3)"></div>
+            <span class="code-meta-text">Sconto paziente: −15% automatico</span>
+          </div>
+        </div>
+        <button onclick="generateCode()" style="margin-top:1.5rem; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:white; padding:13px 22px; min-height:44px; border-radius:10px; cursor:pointer; font-family:inherit; font-size:0.85rem; transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+          Genera nuovo codice ↻
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- SCONTO PAZIENTE -->
+<section id="sconto">
+  <div class="section-label">Vantaggio per il paziente</div>
+  <h2>Il paziente risparmia. Tu guadagni.</h2>
+  <p>Il codice attiva automaticamente uno sconto del 15% sul prezzo del plantare. Non devi fare nulla di manuale — è tutto integrato nell'app.</p>
+  <div class="sconto-card">
+    <div class="price-box">
+      <div class="price-label">Prezzo pieno</div>
+      <div class="price-val strike">€320</div>
+      <div class="price-sub">senza codice</div>
+    </div>
+    <div class="arrow-sep">→</div>
+    <div class="price-box">
+      <div class="price-label">Sconto paziente</div>
+      <div class="price-val gold">−€48,00</div>
+      <div class="price-sub">15% automatico</div>
+    </div>
+    <div class="arrow-sep">→</div>
+    <div class="price-box">
+      <div class="price-label">Prezzo finale paziente</div>
+      <div class="price-val green">€272,00</div>
+      <div class="price-sub">con il tuo codice</div>
+    </div>
+  </div>
+</section>
+
+<!-- TIER -->
+<div id="tier" style="background: var(--ink); padding: 6rem 0;">
+  <div class="tier-inner">
+    <div class="section-label">Le tue commissioni</div>
+    <h2 style="color:var(--white); font-family:'DM Serif Display',serif; font-size:2.4rem; letter-spacing:-0.02em; margin-bottom:0.5rem;">Più pazienti, più guadagni</h2>
+    <p style="color:rgba(255,255,255,0.5); max-width:500px;">La commissione cresce con il volume mensile. Il contatore riparte da zero ogni mese — ogni mese è una nuova opportunità.</p>
+    <div class="tier-cards">
+      <div class="tier-card">
+        <span class="tier-tag">Tier 1</span>
+        <div class="tier-pct">6%</div>
+        <div class="tier-range">Pazienti 1 – 7 del mese</div>
+        <div class="tier-example">
+          <div class="tier-ex-label">Fee per paziente</div>
+          <div class="tier-ex-val">€16,32</div>
+        </div>
+      </div>
+      <div class="tier-card featured">
+        <span class="tier-tag">Tier 2 ✦</span>
+        <div class="tier-pct">8%</div>
+        <div class="tier-range">Pazienti 8 – 20 del mese</div>
+        <div class="tier-example">
+          <div class="tier-ex-label">Fee per paziente</div>
+          <div class="tier-ex-val">€21,76</div>
+        </div>
+      </div>
+      <div class="tier-card">
+        <span class="tier-tag">Tier 3</span>
+        <div class="tier-pct">12%</div>
+        <div class="tier-range">Dal 21° paziente in poi</div>
+        <div class="tier-example">
+          <div class="tier-ex-label">Fee per paziente</div>
+          <div class="tier-ex-val">€32,64</div>
+        </div>
+      </div>
+    </div>
+    <div class="tier-note">
+      Le commissioni sono progressive e non retroattive — ogni paziente mantiene il tier del momento in cui è stato registrato.<br>
+      Il contatore si azzera il 1° di ogni mese. Le fee già maturate restano accreditate.
+    </div>
+  </div>
+</div>
+
+<!-- SIMULATORE -->
+<section id="simulatore">
+  <div class="section-label">Strumento interattivo</div>
+  <h2>Simula i tuoi guadagni</h2>
+  <p>Muovi il cursore per vedere quanto potresti guadagnare in base al numero di pazienti mensili.</p>
+  <div class="sim-wrap">
+    <div class="sim-header">
+      <h3>Simulatore fee mensile</h3>
+      <div class="sim-control">
+        <label>Pazienti al mese:</label>
+        <input type="range" min="1" max="30" value="10" id="slider" oninput="updateSim()">
+        <span class="sim-val" id="slider-val">10</span>
+      </div>
+    </div>
+    <div class="sim-rows" id="sim-rows"></div>
+    <div class="sim-footer">
+      <div>
+        <div class="sim-total-label">Fee totale mensile stimata</div>
+        <div style="font-size:0.8rem; color:var(--ink-faint); margin-top:2px;">su prezzo scontato €272,00</div>
+      </div>
+      <div class="sim-total-val" id="sim-total">—</div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- CALCOLATORE -->
+<section id="calcolatore">
+  <div class="section-label">Proiezione personalizzata</div>
+  <h2>Calcola il tuo guadagno annuale</h2>
+  <div class="calc-grid">
+    <div class="calc-inputs">
+      <div class="calc-field">
+        <label>Pazienti per mese (media)</label>
+        <input type="number" id="c-paz" value="10" min="1" max="100" oninput="updateCalc()">
+      </div>
+      <div class="calc-field">
+        <label>Prezzo plantare (€)</label>
+        <input type="number" id="c-price" value="320" min="50" oninput="updateCalc()">
+      </div>
+      <div class="calc-field">
+        <label>Mesi attivi all'anno</label>
+        <input type="number" id="c-mesi" value="11" min="1" max="12" oninput="updateCalc()">
+      </div>
+    </div>
+    <div class="calc-result">
+      <div class="calc-result-label">Guadagno annuale stimato</div>
+      <div class="calc-result-val" id="c-annual">—</div>
+      <div class="calc-breakdown" id="c-breakdown"></div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- NOTE -->
+<section>
+  <div class="section-label">Domande frequenti</div>
+  <h2>Come funziona nel dettaglio</h2>
+  <div class="notes-grid">
+    <div class="note-card">
+      <h3>Quando ricevo la mia commissione?</h3>
+      <p>La fee viene accreditata nel momento in cui l'ordine del plantare viene evaso — non alla scansione. Questo garantisce che tu venga pagato solo su vendite effettive.</p>
+    </div>
+    <div class="note-card">
+      <h3>Cosa succede se il paziente non ordina?</h3>
+      <p>Se entro 90 giorni dalla scansione non arriva un ordine, il codice scade automaticamente e quel paziente non viene conteggiato nel tuo mese. Nessun costo per te.</p>
+    </div>
+    <div class="note-card">
+      <h3>Il tier si applica a tutti i pazienti del mese?</h3>
+      <p>No — è progressivo. I primi 7 pazienti sono sempre al 6%, l'8° passa all'8% e così via. I pazienti già conteggiati non vengono ricalcolati.</p>
+    </div>
+    <div class="note-card">
+      <h3>Il contatore si azzera ogni mese?</h3>
+      <p>Sì, il 1° di ogni mese il contatore riparte da zero. Le commissioni già maturate restano intatte. Ogni mese è una nuova opportunità per scalare il tier.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div id="cta">
+  <div class="cta-inner">
+    <h2>Pronto a iniziare?</h2>
+    <p>Accedi alla tua dashboard, genera il primo codice e inizia a offrire un servizio in più ai tuoi pazienti — senza costi fissi, senza rischi.</p>
+    <div class="cta-badge">Accesso gratuito per i partner ✦</div>
+  </div>
+</div>
+
+<footer>
+  Scan3DFeet Partner Program &mdash; Documento riservato per uso interno &mdash; Marzo 2026
+</footer>
+
+<script>
+  // ── CODE GENERATOR ──
+  var names = ["X7K2","M9P4","R3T8","Q5W1","B6N7","L2H9","F4J3","D8C5","V1S6","A7E2"];
+  var ci = 0;
+  function generateCode() {
+    ci = (ci + 1) % names.length;
+    document.getElementById('hero-code').textContent = 'DR4819-' + names[ci];
+  }
+
+  // ── SIMULATOR ──
+  function calcFee(n) {
+    if (n <= 7) return 16.32;
+    if (n <= 20) return 21.76;
+    return 32.64;
+  }
+  function tierLabel(n) {
+    if (n <= 7) return '<span class="sim-tier-badge t1-badge">T1 – 6%</span>';
+    if (n <= 20) return '<span class="sim-tier-badge t2-badge">T2 – 8%</span>';
+    return '<span class="sim-tier-badge t3-badge">T3 – 12%</span>';
+  }
+  function tierClass(n) {
+    if (n <= 7) return '';
+    if (n <= 20) return 't2';
+    return 't3';
+  }
+  function updateSim() {
+    var v = parseInt(document.getElementById('slider').value);
+    document.getElementById('slider-val').textContent = v;
+    var rows = '';
+    var total = 0;
+    var show = Math.min(v, 12);
+    for (var i = 1; i <= show; i++) {
+      var fee = calcFee(i);
+      total += fee;
+      rows += '<div class="sim-row ' + tierClass(i) + '">';
+      rows += '<div class="sim-row-num">' + i + '</div>';
+      rows += '<div style="font-size:0.85rem;color:var(--ink-soft)">Paziente ' + i + '</div>';
+      rows += '<div>' + tierLabel(i) + '</div>';
+      rows += '<div style="font-size:0.85rem;color:var(--ink-faint)">€272,00</div>';
+      rows += '<div style="font-weight:600;color:var(--ink)">€' + fee.toFixed(2).replace('.',',') + '</div>';
+      rows += '</div>';
+    }
+    if (v > 12) {
+      for (var j = 13; j <= v; j++) total += calcFee(j);
+      rows += '<div style="text-align:center;font-size:0.8rem;color:var(--ink-faint);padding:8px">... e altri ' + (v-12) + ' pazienti</div>';
+    }
+    document.getElementById('sim-rows').innerHTML = rows;
+    document.getElementById('sim-total').textContent = '€' + total.toFixed(2).replace('.',',');
+  }
+
+  // ── CALCULATOR ──
+  function calcMonthlyFee(nPaz, prezzoScontato) {
+    var total = 0;
+    for (var i = 1; i <= nPaz; i++) {
+      var pct = i <= 7 ? 0.06 : (i <= 20 ? 0.08 : 0.12);
+      total += prezzoScontato * pct;
+    }
+    return total;
+  }
+  function updateCalc() {
+    var nPaz = parseInt(document.getElementById('c-paz').value) || 0;
+    var price = parseFloat(document.getElementById('c-price').value) || 320;
+    var mesi = parseInt(document.getElementById('c-mesi').value) || 12;
+    var scontato = price * 0.85;
+    var monthly = calcMonthlyFee(nPaz, scontato);
+    var annual = monthly * mesi;
+    document.getElementById('c-annual').textContent = '€' + Math.round(annual).toLocaleString('it-IT');
+    var pct = nPaz <= 7 ? '6%' : (nPaz <= 20 ? 'fino all\'8%' : 'fino al 12%');
+    document.getElementById('c-breakdown').innerHTML =
+      '<hr class="calc-br-divider">' +
+      '<div class="calc-br-row"><span>Prezzo paziente (−15%)</span><span>€' + scontato.toFixed(2).replace('.',',') + '</span></div>' +
+      '<div class="calc-br-row"><span>Fee mensile stimata</span><span>€' + monthly.toFixed(2).replace('.',',') + '</span></div>' +
+      '<div class="calc-br-row"><span>Tier applicato</span><span>' + pct + '</span></div>' +
+      '<div class="calc-br-row"><span>Mesi attivi</span><span>' + mesi + '</span></div>' +
+      '<hr class="calc-br-divider">' +
+      '<div class="calc-br-row"><span style="color:rgba(255,255,255,0.6)">Totale annuale</span><span style="color:#7fffd4;font-size:1rem">€' + Math.round(annual).toLocaleString('it-IT') + '</span></div>';
+  }
+
+  // Init
+  updateSim();
+  updateCalc();
+</script>
+</body>
+</html>
